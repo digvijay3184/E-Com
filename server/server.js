@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const helmet = require("helmet")
 const authRouter = require("./routes/auth/auth-routes");
 const adminProductsRouter = require("./routes/admin/products-routes");
 const adminOrderRouter = require("./routes/admin/order-routes");
@@ -18,17 +19,17 @@ const commonFeatureRouter = require("./routes/common/feature-routes");
 //create a database connection -> u can also
 //create a separate file for this and then import/use that file here
 
-mongoose
-  .connect("mongodb+srv://digvijaysingh4040:4eOsbzI5q01v2j9u@cluster0.nim1k.mongodb.net/")
-  .then(() => console.log("MongoDB connected"))
-  .catch((error) => console.log(error));
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://steady-paletas-7c047f.netlify.app",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
@@ -57,3 +58,8 @@ app.use("/api/shop/review", shopReviewRouter);
 app.use("/api/common/feature", commonFeatureRouter);
 
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
+mongoose
+  .connect("mongodb+srv://digvijaysingh4040:4eOsbzI5q01v2j9u@cluster0.nim1k.mongodb.net/")
+  .then(() => console.log("MongoDB connected"))
+  .catch((error) => console.log(error));
+
