@@ -12,7 +12,7 @@
 
     async (formData) => {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://e-com-39q7.onrender.com/api/auth/register",
         formData,
         {
           withCredentials: true,
@@ -28,7 +28,7 @@
 
     async (formData) => {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://e-com-39q7.onrender.com/api/auth/login",
         formData,
         {
           withCredentials: true,
@@ -44,7 +44,7 @@
 
     async () => {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/logout",
+        "https://e-com-39q7.onrender.com/api/auth/logout",
         {},
         {
           withCredentials: true,
@@ -60,7 +60,7 @@
 
     async () => {
       const response = await axios.get(
-        "http://localhost:5000/api/auth/check-auth",
+        "https://e-com-39q7.onrender.com/api/auth/check-auth",
         {
           withCredentials: true,
           headers: {
