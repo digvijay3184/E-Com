@@ -56,7 +56,7 @@ app.use("/api/common/feature", commonFeatureRouter);
 
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
 mongoose
-  .connect("mongodb+srv://digvijaysingh4040:4eOsbzI5q01v2j9u@cluster0.nim1k.mongodb.net/")
+  .connect("mongodb+srv://digvijaysingh4040:3MFlaiCX08GOunRd@cluster0.nim1k.mongodb.net/")
   .then(() => console.log("MongoDB connected"))
   .catch((error) => console.log(error));
 
