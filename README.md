@@ -5,5 +5,6 @@
 
    ```bash
    git clone https://github.com/your-username/E-Com.git
-   cd ecommerce-mern
+   cd E-Com
+
 
